@@ -1,4 +1,4 @@
-#Homelab & Self-Hosting Setup
+##  Homelab & Self-Hosting Setup
 
 ## Overview
 This homelab serves as a **self-hosted environment** for **monitoring, security, and automation**. It includes **Raspberry Pi devices, a NAS, Docker-based services, and a WireGuard VPN** for remote access. The goal is to **maintain full control over data, improve security, and experiment with self-hosting solutions.**
