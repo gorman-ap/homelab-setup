@@ -1,4 +1,4 @@
-##  Homelab & Self-Hosting Setup
+# Homelab & Self-Hosting Setup
 
 ## Overview
 This homelab serves as a **self-hosted environment** for **monitoring, security, and automation**. It includes **Raspberry Pi devices, a NAS, Docker-based services, and a WireGuard VPN** for remote access. The goal is to **maintain full control over data, improve security, and experiment with self-hosting solutions.**
@@ -6,34 +6,40 @@ This homelab serves as a **self-hosted environment** for **monitoring, security,
 ---
 
 ##  Hardware
-- **Dell Optiplex 3050 SFF**
+- **Lenovo ThinkPad X1 Yoga (4th Gen) (Hostname: Voyager)**
+  - **OS:** Ubuntu Desktop
+  - **Role:** Portable workstation & remote access
+  - **CPU:** Intel Core i5 (10th Gen)
+  - **RAM:** 8GB DDR4
+    
+- **Dell Optiplex 3050 SFF (Hostname: NetWarden)**
   - **OS:** Ubuntu Server
   - **Role:** Primary server running Netdata, Loki, and Promtail
   - **CPU:** Intel Core i5-7500T
   - **RAM:** 16GB DDR4
   - **Storage:** 2TB NVMe
 
-- **Dell Precision Tower 7810**
+- **Dell Precision Tower 7810 (Hostname: HomeServ)**
   - **OS:** Ubuntu Desktop
   - **Role:** Main workstation
   - **CPU:** Dual Intel Xeon E5-2623 v3
   - **RAM:** 64GB DDR4
   - **Storage:** 2x 500GB SSD
 
-- **Raspberry Pi 4**
+- **Raspberry Pi 4 (Hostname: SignalShieldVPN)**
   - **OS:** Ubuntu Light
   - **Role:** Running Pi-hole for network-wide ad blocking
   - **RAM:** 4GB
   - **Storage:** 32GB microSD
 
-- **Raspberry Pi 4**
+- **Raspberry Pi 4 (Hostname: HomeDJ)**
   - **OS:** [Moode Audio](https://github.com/moode-player/moode)
   - **Role:** Hi-Fi music streaming
   - **RAM:** 4GB
   - **Storage:** 64GB microSD
 
-- **Netgear ReadyNAS 314**
-  - **OS:** Proprietary NAS OS
+- **Netgear ReadyNAS 314 (Hostname: HomeNAS)**
+  - **OS:** Debian 8
   - **Role:** Storage & Plex Media Hosting
   - **RAID Level:** RAID 5
   - **Drives:** 4x 8TB HDD (Total usable: ~24TB)
@@ -59,6 +65,9 @@ This homelab serves as a **self-hosted environment** for **monitoring, security,
 ---
 
 ##  Future Plans
+- **Replace all existing patch cables with Cat 6 cables** to improve network speed and reliability
+- **Upgrade SFF system to 32GB RAM** by replacing existing memory with two 16GB sticks
+- **Replace Raspberry Pi 4 (Pi-hole) with a Raspberry Pi 5 (8GB model)** for improved performance
 - **Implement a Network Time Protocol (NTP) server** for synchronized time across all devices
 - **Deploy a custom firewall** for advanced network security
 - **Enhance monitoring** with alerting and automated responses
