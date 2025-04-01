@@ -1,4 +1,4 @@
-# HomeDJ - Custom Raspberry Pi DJ System
+# HomeDJ - Custom Raspberry Pi Media Streaming System
 
 ## Overview
 **HomeDJ** is a custom-built Raspberry Pi-based audio system designed for high-quality music streaming and playback. Using a Raspberry Pi, a custom HAT (Hardware Attached on Top), and a unique custom case, this setup brings powerful audio playback capabilities to your home or workspace.
@@ -7,7 +7,6 @@ This system allows seamless music streaming, with support for local files and on
 
 ## Features
 - **High-Quality Audio**: Powered by a custom audio HAT that ensures excellent sound output.
-- **Custom Case**: The HomeDJ setup is housed in a unique, custom-designed case that not only protects the components but also gives it a sleek, aesthetic look.
 - **Streaming Support**: Supports both local media files and streaming from services like Tidal, enabling high-quality music playback at your fingertips.
 - **User-Friendly Control**: Easily control your music through a simple web interface or mobile app (via UPnP/DLNA).
 
