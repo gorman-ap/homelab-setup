@@ -12,7 +12,7 @@ This homelab serves as a **self-hosted environment** for **monitoring, security,
   - **CPU:** Intel Core i5 (10th Gen)
   - **RAM:** 8GB DDR4
     
-- **Dell Optiplex 3050 SFF (Hostname: NetWarden)**
+- **Dell Optiplex 3050 SFF (Hostname: [NetWarden](https://github.com/gorman-ap/homelab-setup/tree/main/devices/NetWarden))**
   - **OS:** Ubuntu Server
   - **Role:** Primary server running Netdata, Loki, and Promtail
   - **CPU:** Intel Core i5-7500T
@@ -26,19 +26,19 @@ This homelab serves as a **self-hosted environment** for **monitoring, security,
   - **RAM:** 64GB DDR4
   - **Storage:** 2x 500GB SSD
 
-- **Raspberry Pi 4 (Hostname: SignalShieldVPN)**
+- **Raspberry Pi 4 (Hostname: [SignalShieldVPN](https://github.com/gorman-ap/homelab-setup/tree/main/devices/SignalShieldVPN))**
   - **OS:** Ubuntu Light
   - **Role:** Running Pi-hole for network-wide ad blocking
   - **RAM:** 4GB
   - **Storage:** 32GB microSD
 
-- **Raspberry Pi 4 (Hostname: HomeDJ)**
+- **Raspberry Pi 4 (Hostname: [HomeDJ](https://github.com/gorman-ap/homelab-setup/tree/main/devices/HomeDJ))**
   - **OS:** [Moode Audio](https://github.com/moode-player/moode)
   - **Role:** Hi-Fi music streaming
   - **RAM:** 4GB
   - **Storage:** 64GB microSD
 
-- **Netgear ReadyNAS 314 (Hostname: HomeNAS)**
+- **Netgear ReadyNAS 314 (Hostname: [HomeNAS](https://github.com/gorman-ap/homelab-setup/tree/main/devices/HomeNAS))**
   - **OS:** Debian 8
   - **Role:** Storage & Plex Media Hosting
   - **RAID Level:** RAID 5
