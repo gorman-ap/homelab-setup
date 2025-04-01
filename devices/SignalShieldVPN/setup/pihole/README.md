@@ -55,12 +55,4 @@ Or use a browser on a device pointed to the Pi-hole IP.
 
 ## Notes
 - Ensure Pi-hole has a static IP (`192.168.1.10`)
-- Rate limiting adjusted to handle noisy devices (e.g., work laptops)
-- DHCP moved back to the router after wireless issues, may revisit
-
-
-## Next Steps
-- Add Pi-hole metrics to Netdata
-- Fine-tune blocklists per household needs
-- Consider adding Unbound back in the future
-
+- Rate limiting may need to be adjusted to handle noisy devices (e.g., work laptops)
