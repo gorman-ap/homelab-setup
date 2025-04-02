@@ -41,7 +41,7 @@ Note: This NAS does not perform transcoding but supports direct play for media s
 # Setup Notes
 
 - This NAS is configured and maintained via its own administrative web interface. It is not managed via scripts or automation in the homelab repos.
-- Plex installation details are documented in [plex_setup.md]
+- Plex installation details are documented in [plex_setup.md](https://github.com/gorman-ap/homelab-setup/blob/main/devices/HomeNAS/plex_setup.md)
 
 ---
 
