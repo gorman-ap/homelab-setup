@@ -1,0 +1,79 @@
+# NetWarden & NetSentry Major Overhaul
+
+- **Current as of : 2025-05-15**
+
+## Overview
+This document outlines the purpose, rationale, and high-level structure of the NetWarden and NetSentry migration and maintenance setup. Configuration details and individual playbooks are tracked in a separate repository.
+
+
+
+## Purpose of Migration
+
+### Why NetWarden Was Chosen as Core
+- **Always-on reliability**: NetWarden runs 24/7 and is rack-mounted with UPS protection.
+- **Centralized control**: Ideal location to run Ansible, Netdata, Pi-hole (primary DNS + DHCP), Chrony (NTP), and backups.
+- **Higher performance**: More robust hardware than Pi devices, with NVMe storage and sufficient RAM.
+
+### Why NetSentry Exists
+- **Redundancy**: Acts as secondary DNS resolver for resilience.
+- **DNS security**: Runs Unbound for recursive DNS resolution.
+- **Lightweight backup target**: Low-resource Pi configured to serve DNS queries and act as a fallback.
+
+### Why We Stopped Using SignalShieldVPN
+- Retired in favor of NetSentry for clarity and tighter scope.
+- VPN role was deprioritized; DNS and Unbound roles were split off and hardened.
+
+---
+
+## Migration Goals
+- Eliminate single points of failure in DNS and DHCP.
+- Automate updates and backups across always-on infrastructure.
+- Ensure configuration is version-controlled and easy to restore.
+- Unify NTP, DNS, and config management under Ansible-driven automation.
+
+---
+
+## Devices
+- **NetWarden**
+  - Ubuntu Server
+  - Pi-hole (primary DNS + DHCP)
+  - Chrony (NTP server)
+  - Netdata, Loki, Promtail
+  - Ansible control node
+
+- **NetSentry**
+  - Raspberry Pi (formerly SignalShieldVPN)
+  - Pi-hole (secondary DNS)
+  - Unbound DNS resolver
+
+---
+
+## System Design Summary
+- NetWarden backs up config files weekly.
+- NetSentry backs up Pi-hole and Unbound configs weekly.
+- Both devices are included in the Ansible `[autoupdate]` group and receive weekly OS/security updates.
+- Logs and backups are timestamped and stored to `/mnt/NetWarden-Backups/` and `~/ansible/logs/`
+- NetWarden serves as the authoritative NTP server for the network.
+- All config file backups and Ansible roles are tracked in a separate Git repository.
+
+---
+
+## What's Stored Here
+- High-level automation strategy
+- Device responsibilities
+- Cron schedule and automation goals
+- Ansible group usage
+
+## What's Not Stored Here
+- Specific config files (stored in separate Git repository)
+- Detailed playbook tasks or scripts (referenced externally)
+- Manual package installation steps
+
+---
+
+## Next Steps (Optional)
+- Create `restore-homedj.yaml` and `restore-netsentry.yaml` for disaster recovery
+- Expand weekly snapshot system to include system state (e.g. dpkg package lists)
+- Migrate Docker configs and system overlays to Git and pull them during recovery
+- Optional PXE/tftp boot from NetWarden for full auto-rebuild pipeline
+
