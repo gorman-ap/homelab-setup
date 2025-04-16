@@ -1,9 +1,16 @@
 
 # NetWarden
 
-**NetWarden** is the central node in the home network, responsible for monitoring, logging, and managing system metrics across the fleet.
+**NetWarden** is the central node in the home network, responsible for hosting several network services, automated device maintenance locally and over the network, and device monitoring.
+
 
 ---
+
+# [**v1.0.0 - April 2025 Update**](https://github.com/gorman-ap/homelab-setup/blob/main/devices/NetWarden/v1.0.0-April%202025%20Update.md)
+
+
+
+
 
 ## Role
 - Serves as a centralized collector and analyzer for network and device metrics
@@ -17,14 +24,11 @@
 - **Promtail** – Local log forwarder for NetWarden itself
 - **Docker** – Used to containerize services like Loki
 
-
-## Network
-- **Static IP**: `192.168.10.x`
-- **Inbound Ports**:
-  - `22/tcp` – SSH
-  - `19999/tcp` – Netdata dashboard
-  - `3100/tcp` – Loki log receiver
-  - `161/udp` – SNMP from NAS (if needed)
+## New Services as of v1.0.0 Update
+- **Ansible** - Automation of Updates, upgrades, and backup to NAS.
+- **Chrony** - Synchronized Network Time Protocol
+- **Pi-hole** - DNS Resolver
+- **DHCP** - Network IP address distribution
 
 
 ## Security & Hardening
